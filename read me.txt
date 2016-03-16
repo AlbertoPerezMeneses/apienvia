@@ -1,0 +1,4 @@
+please 
+create data bases found in sql directory
+execute file seed users
+config db_config with your mysql access

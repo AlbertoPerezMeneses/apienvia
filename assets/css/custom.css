@@ -1,0 +1,382 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2/07/2014, 09:11:41 PM
+    Author     : Your Name <your.name at your.org>
+*/
+/*
+header items
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+a{
+    color: #8C8C8C;
+}
+
+a:hover, a:focus {
+color: #003159;
+}
+
+
+*{
+     border-radius: 2px !important;
+}
+
+.head-height{
+    min-height: 80px;   
+}
+.logo{
+    margin-top: 10px;
+    height: 40px;
+}
+/*
+especial items
+*/
+.z1{
+    z-index: 1;
+}
+/*
+colors
+*/
+.bg-pink-1{
+    background: rgb(248,194,194);
+}
+.bg-purple-1{
+    background: rgb(161,117,144);
+}
+
+/*
+container items
+*/
+.ancho{
+    min-height: 600pt;
+}
+.josefin{
+  font-family: 'Josefin Sans', serif;
+}
+.tab-helper{
+    min-height: 20px;
+}
+.opensans{
+    font-family: 'Open Sans',serif;
+}
+.font-color-white{
+    color: white;
+}
+.font-color-rosa{
+    color: #ff80bf;
+}
+.big-text-1{
+    font-size: 90pt;
+}
+.big-text-2{
+    font-size: 60pt;
+}
+.big-text-3{
+    font-size: 40pt;
+}
+
+.big-text-4{
+    font-size: 27pt;
+}
+/*
+footer
+*/
+
+.footer-height{
+    min-height: 50pt;
+}
+
+/*
+//posible solucion a el encabezado con las tablas 
+
+table tbody, table thead
+{
+    display: block;
+}
+
+table tbody 
+{
+   overflow: auto;
+   height: 100px;
+}
+
+th
+{
+    width: 72px;
+}
+
+/*
+*/
+/*
+responsive utilities
+*/
+
+ 
+table.scrollable thead tr {
+  left: 0; top: 0;         
+  position: absolute;      
+  background-color:#81BEF7;
+  }  
+/*
+table .header-fixed {
+  position: fixed;
+  //position: absolute;
+  top: 0px;
+  z-index: 1020; //10 less than .navbar-fixed to prevent any overlap 
+  
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); // IE6-9 
+}
+*/
+.table-height{
+    height: 400pt;
+}
+/*
+.table-helper {
+overflow: scroll;
+}
+*/
+
+
+
+/*
+server list assets
+
+//http://bootsnipp.com/snippets/featured/progress-bar-tiles
+*/
+
+     .tile-progress {
+background-color: #303641;
+color: #fff;
+}
+.tile-progress {
+background: #00a65b;
+color: #fff;
+margin-bottom: 20px;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding;
+background-clip: padding-box;
+-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+}
+.tile-progress .tile-header {
+padding: 5px 20px;
+padding-bottom: 5px;
+}
+.tile-progress .tile-progressbar {
+height: 2px;
+background: rgba(0,0,0,0.18);
+margin: 0;
+}
+.tile-progress .tile-progressbar span {
+background: #fff;
+}
+.tile-progress .tile-progressbar span {
+display: block;
+background: #fff;
+width: 0;
+height: 100%;
+-webkit-transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+-moz-transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+-o-transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+}
+.tile-progress .tile-footer {
+padding: 20px;
+text-align: right;
+background: rgba(0,0,0,0.1);
+-webkit-border-radius: 0 0 3px 3px;
+-webkit-background-clip: padding-box;
+-moz-border-radius: 0 0 3px 3px;
+-moz-background-clip: padding;
+border-radius: 0 0 3px 3px;
+background-clip: padding-box;
+-webkit-border-radius: 0 0 3px 3px;
+-moz-border-radius: 0 0 3px 3px;
+border-radius: 0 0 3px 3px;
+}
+.padding-affix{
+    padding-bottom: 10pt;
+}
+
+.pill-red{
+    background-color: #FD5D45;
+color: #fff;
+}
+.pill-gray{
+    background-color: #909090;
+color: #fff;
+}
+.pill-black{
+    background-color: #000;
+color: #fff;
+}
+.pill-blue{
+    background-color: #0073b7;
+color: #fff;
+}
+.pill-yellow{
+    background-color: #FFBA25;
+color: #000;
+}
+.pill-blue2{
+    background-color: #5bc0de;
+color: #fff;
+}
+.pill-purple{
+    background-color: #B856D2;
+color: #fff;
+}
+
+.pill-orange{
+    background-color: #FF9741;
+color: #fff;
+}
+
+
+.pill-null{
+    background-color: #303641;
+color: #fff;
+}
+.pill-green{
+    background-color: #00a65a;
+color: #fff;
+}
+
+.tile-progress.tile-red {
+background-color: #FD5D45;
+color: #fff;
+}
+
+.tile-progress.tile-gray {
+background-color: #909090;
+color: #fff;
+}
+
+
+.tile-progress.tile-orange {
+background-color: #FF9741;
+color: #000;
+}
+.tile-progress {
+background-color: #303641;
+color: #fff;
+}
+.tile-progress.tile-black {
+background-color: #000;
+color: #fff;
+}
+
+.tile-progress.tile-blue {
+background-color: #0073b7;
+color: #fff;
+}
+.tile-progress.tile-blue2 {
+background-color: #5bc0de;
+color: #fff;
+}
+.tile-progress.tile-yellow {
+background-color: #FFBA25;
+color: #000;
+}
+.tile-progress.tile-aqua {
+background-color: #00c0ef;
+color: #fff;
+}
+.tile-progress.tile-green {
+background-color: #00a65a;
+color: #fff;
+}
+.tile-progress.tile-cyan {
+background-color: #00b29e;
+color: #fff;
+}
+.tile-progress.tile-purple {
+background-color: #B856D2;
+color: #fff;
+}
+.tile-progress.tile-pink {
+background-color: #ec3b83;
+color: #fff;
+}
+
+.navbar-inverse {
+background-color: #3A6733 !important;
+//border-bottom: rgb(255, 15, 133);
+border-bottom-style: solid;
+border-bottom-width: 3px;
+
+//border-top: rgb(255, 15, 133);
+border-top-style: solid;
+border-top-width: 3px;
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus {
+color: #fff;
+background-color: #509047;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+background-color: 203A1C;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+border-color: #FF93CC;
+}
+
+.modal-log{
+    
+    font-family: monospace;
+    overflow: scroll;
+    height: 300pt;
+}
+
+.modal-log{
+    
+ background: black;
+ color: #00a65a;
+}
+
+
+
+/*
+css material
+*/
+.z-depth-1 {
+box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+}
+
+.z-depth-2 {
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.23);
+}
+
+.z-depth-3 {
+box-shadow: 0 6px 10px rgba(0, 0, 0, 0.23);
+}
+
+.z-depth-4 {
+box-shadow: 0 10px 18px rgba(0, 0, 0, 0.22);
+}
+
+
+
+.hidden-message {
+    height: 150%;
+    width: 100%;
+    float: left;
+    background: rgba(0, 0, 0, 0.36);
+    color: white;
+    position: absolute;
+    z-index: 9999;
+    top: 0px;
+}
+

@@ -1,0 +1,1 @@
+define({  "name": "api envia",  "version": "0.1.0",  "description": "api para hacer consultas",  "title": "API ENVIA",  "url": "",  "sampleUrl": false,  "apidoc": "0.2.0",  "generator": {    "name": "apidoc",    "time": "2016-03-16T18:57:21.908Z",    "url": "http://apidocjs.com",    "version": "0.15.1"  }});
