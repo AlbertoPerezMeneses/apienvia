@@ -25,19 +25,12 @@ class Metadata extends REST_Controller {
      * @apiGroup METADATA
      *     
      *
-     * @apiSuccess {String} las bases de datos.    
+     * @apiSuccess {String} bd las bases de datos.    
      *
      * @apiSuccessExample Success-Response:
      *     HTTP/1.1 200 OK
      *     {"bd":["jm1","test"]}
-     *
-     * @apiError UserNotFound The id of the User was not found.
-     *
-     * @apiErrorExample Error-Response:
-     *     HTTP/1.1 404 Not Found
-     *     {
-     *       "error": "UserNotFound"
-     *     }
+     *     
      */
     public function databases_get() {
         $this->load->model("meta_data");
@@ -62,19 +55,20 @@ class Metadata extends REST_Controller {
         $this->response($data, 200);
     }
     /**
-     * @api {get} metadata/tables/ Tables
+     * @api {get} metadata/tables/schema/:database Tables
      * @apiName GetTables
      * @apiGroup METADATA
-     * @apiParam {schema} la base de datos.
+     * 
+     * @apiParam {String} schema la base de datos.
      *     
      *
-     * @apiSuccess {String} la lista de tablas en la base de datos.    
+     * @apiSuccess {String} tables la lista de tablas en la base de datos.    
      *
      * @apiSuccessExample Success-Response:
      *     HTTP/1.1 200 OK
      *     {"tables":["table1","table2"]}
      *
-     * @apiError UserNotFound The id of the User was not found.
+     * @apiError response no existe la base de datos
      *
      * @apiErrorExample Error-Response:
      *     HTTP/1.1 404 Not Found
@@ -99,20 +93,20 @@ class Metadata extends REST_Controller {
 
     
     /**
-     * @api {get} metadata/column/ Columns
+     * @api {get} metadata/column/schema/:database/table/:table Columns
      * @apiName GetColumn
      * @apiGroup METADATA
      *
-     * @apiParam {schema} la base de datos
-     * @apiParam {table} la tabla de la base de datos     
+     * @apiParam {String} schema la base de datos
+     * @apiParam {String} table la tabla de la base de datos     
      *
-     * @apiSuccess {String} firstname Firstname of the User.     
+     * @apiSuccess {String} columns Las columnas de la tabla.
      *
      * @apiSuccessExample Success-Response:
      *     HTTP/1.1 200 OK
      *     {"columns":["columns1","columns2"]}
      *
-     * @apiError UserNotFound The id of the User was not found.
+     * @apiError response no existe la base de datos
      *
      * @apiErrorExample Error-Response:
      *     HTTP/1.1 404 Not Found
@@ -141,26 +135,26 @@ class Metadata extends REST_Controller {
      * @apiName GetSelect
      * @apiGroup QUERY
      *
-     * @apiParam {schema} la base de datos
-     * @apiParam {table} la tabla de la base de datos
-     * @apiParam {where} parametros de busqueda , se tomaran como parametros de busqueda todos los demas parametros de busqueda
-     * @apiParam {limit} el limite maximo de resultados de una busqueda
+     * @apiParam {schema} String la base de datos
+     * @apiParam {table} String la tabla de la base de datos
+     * @apiParam {where} String parametros de busqueda , se tomaran como parametros de busqueda todos los demas parametros de busqueda
+     * @apiParam {limit} int el limite maximo de resultados de una busqueda
      
      *
-     * @apiSuccess {String} firstname Firstname of the User.
+     * @apiSuccess {String} response resultado de la busqueda.
      *
      * @apiSuccessExample Success-Response:
      *     HTTP/1.1 200 OK
-     *     {
+     *     {response:[{
      *       "firstname": "John",
      *       "lastname": "Doe"
-     *     }
+     *     }]}
      *
-     * @apiError UserNotFound The id of the User was not found.
+     * @apiError response  no existe la base de datos
      *
      * @apiErrorExample Error-Response:
      *     HTTP/1.1 404 Not Found
-     *     {"result":[{"data":"value"}]}
+     *     {"response":"no existe la base de datos"}
      */
     //http://localhost/MiningEnvia/index.php/metadata/select/schema/jmmodulo4/table/usuario/limit/2
     public function select_get() {
@@ -190,27 +184,22 @@ class Metadata extends REST_Controller {
      * @apiName GetCount
      * @apiGroup QUERY
      *
-     * @apiParam {schema} la base de datos
-     * @apiParam {table} la tabla de la base de datos
-     * @apiParam {where} parametros de busqueda , se tomaran como parametros de busqueda todos los demas parametros de busqueda
-     * @apiParam {limit} el limite maximo de resultados de una busqueda
+     * @apiParam {String} schema la base de datos
+     * @apiParam {String} table la tabla de la base de datos
+     * @apiParam {String} where parametros de busqueda , se tomaran como parametros de busqueda todos los demas parametros de busqueda
+     * @apiParam {int} limit el limite maximo de resultados de una busqueda
      * 
-     * @apiSuccess {String} firstname Firstname of the User.
+     * @apiSuccess {String} result cuenta del query obtenido
      *
      * @apiSuccessExample Success-Response:
      *     HTTP/1.1 200 OK
-     *     {
-     *       "firstname": "John",
-     *       "lastname": "Doe"
-     *     }
+     *     {"result":2}
      *
-     * @apiError UserNotFound The id of the User was not found.
+     * @apiError response no existe la base de datos
      *
      * @apiErrorExample Error-Response:
      *     HTTP/1.1 404 Not Found
-     *     {
-     *       "response": "no existe la base de datos"
-     *     }
+     *     {"response":"no existe la base de datos"}
      */
     //http://localhost/MiningEnvia/index.php/metadata/select/schema/jmmodulo4/table/usuario/limit/2
     public function count_get() {
